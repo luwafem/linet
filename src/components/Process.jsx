@@ -2,10 +2,10 @@
 import useReveal from '../hooks/useReveal'
 
 const steps = [
-  { num: '01', title: 'Discover', desc: 'Deep dive into your brand, audience, competitors, and goals – to understand where you stand and where you need to go.' },
-  { num: '02', title: 'Plan', desc: 'Build a tailored content strategy and editorial calendar with clear KPIs, tone of voice, and platform-specific approaches.' },
-  { num: '03', title: 'Create', desc: 'Craft platform-native content, manage community engagement, and execute campaigns that resonate with your audience.' },
-  { num: '04', title: 'Optimize', desc: 'Analyse performance data, refine strategy, and continuously improve results through data-driven iteration.' },
+  { num: '01', title: 'Discover', desc: 'Deep dive into your brand, audience, competitors, and goals to understand where you stand and where you need to go.' },
+  { num: '02', title: 'Plan', desc: 'Build a tailored content strategy and editorial calendar with clear KPIs, tone of voice, and platform specific approaches.' },
+  { num: '03', title: 'Create', desc: 'Craft platform native content, manage community engagement, and execute campaigns that resonate with your audience.' },
+  { num: '04', title: 'Optimize', desc: 'Analyse performance data, refine strategy, and continuously improve results through data driven iteration.' },
 ]
 
 export default function Process() {
