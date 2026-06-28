@@ -101,13 +101,13 @@ export default function Contact() {
                 <label className="text-xs tracking-[.12em] uppercase text-nude-500 mb-2 block font-tech font-medium">
                   Your Name
                 </label>
-                <input type="text" className="contact-input" placeholder="Jane Doe" required />
+                <input type="text" className="contact-input" placeholder="Name" required />
               </div>
               <div>
                 <label className="text-xs tracking-[.12em] uppercase text-nude-500 mb-2 block font-tech font-medium">
                   Email Address
                 </label>
-                <input type="email" className="contact-input" placeholder="jane@example.com" required />
+                <input type="email" className="contact-input" placeholder="Email" required />
               </div>
               <div>
                 <label className="text-xs tracking-[.12em] uppercase text-nude-500 mb-2 block font-tech font-medium">
