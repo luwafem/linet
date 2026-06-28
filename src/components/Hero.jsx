@@ -27,7 +27,6 @@ export default function Hero() {
         >
           Scroll
         </span>
-        <div className="w-px h-8 bg-nude-400/40" />
       </div>
 
       {/* Cutout image with halo */}
@@ -90,7 +89,6 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 text-sm md:text-base font-medium tracking-[0.1em] uppercase text-white bg-gold-500 rounded-lg hover:bg-gold-600 transition-all duration-300 shadow-sm hover:shadow-md font-tech"
               >
                 View My Work
-                <i className="fa-solid fa-arrow-right text-xs" />
               </a>
               <a
                 href="#contact"
