@@ -147,7 +147,7 @@ export default function Hero() {
             </div>
             <div>
               <div className="text-[0.65rem] tracking-[0.3em] uppercase text-nude-700 font-medium mb-1 font-tech">Experience</div>
-              <div className="text-sm text-dark font-normal font-tech">5+ Years</div>
+              <div className="text-sm text-dark font-normal font-tech">2+ Years</div>
             </div>
             <div>
               <div className="text-[0.65rem] tracking-[0.3em] uppercase text-nude-700 font-medium mb-1 font-tech">Status</div>
