@@ -1,7 +1,7 @@
 // generate-sitemap.js
 import fs from 'fs'
 
-const baseUrl = 'https://linet.co'
+const baseUrl = 'https://linetk.netlify.app/'
 const routes = ['/'] // add more if you add new pages
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
