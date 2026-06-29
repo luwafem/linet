@@ -44,15 +44,15 @@ export default function Hero() {
         <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-end md:items-center">
           {/* LEFT */}
           <div className="md:col-span-6">
-            {/* Expertise label */}
-            <div className="mb-4 md:mb-4">
-              <span className="text-[0.7rem] tracking-[0.25em] uppercase text-nude-700 font-medium font-tech">
+            {/* Expertise label – smaller on mobile */}
+            <div className="mb-3 md:mb-4">
+              <span className="text-[0.55rem] md:text-[0.7rem] tracking-[0.25em] uppercase text-nude-700 font-medium font-tech">
                 Expertise
               </span>
             </div>
 
-            {/* Skill tags */}
-            <div className="flex flex-wrap gap-2 mb-6 md:mb-6">
+            {/* Skill tags – smaller on mobile */}
+            <div className="flex flex-wrap gap-1.5 md:gap-2 mb-6 md:mb-6">
               {[
                 'Content Strategy',
                 'Community Management',
@@ -61,7 +61,7 @@ export default function Hero() {
               ].map(tag => (
                 <span
                   key={tag}
-                  className="text-[0.7rem] tracking-[0.1em] uppercase px-3 py-1 rounded-md bg-nude-200/70 text-dark font-medium font-tech"
+                  className="text-[0.55rem] md:text-[0.7rem] tracking-[0.1em] uppercase px-2 md:px-3 py-1 rounded-md bg-nude-200/70 text-dark font-medium font-tech"
                 >
                   {tag}
                 </span>
@@ -99,7 +99,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT: Meta – updated with real social links */}
+          {/* RIGHT: Meta – unchanged */}
           <div className="hidden md:flex md:col-span-6 flex-col gap-4 md:pl-8 pb-4 relative z-30">
             <div className="hero-4 space-y-4">
               <div>
@@ -124,53 +124,17 @@ export default function Hero() {
               <div className="pt-4 border-t border-nude-200/50">
                 <div className="text-[0.7rem] tracking-[0.3em] uppercase text-nude-700 font-medium mb-2 font-tech">Connect</div>
                 <div className="flex gap-4">
-                  {/* Instagram */}
-                  <a
-                    href="https://instagram.com/kithae.linet"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg"
-                    aria-label="Instagram"
-                  >
-                    <i className="fa-brands fa-instagram" />
-                  </a>
-                  {/* LinkedIn */}
-                  <a
-                    href="https://www.linkedin.com/in/linet-kithae-936211344"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg"
-                    aria-label="LinkedIn"
-                  >
-                    <i className="fa-brands fa-linkedin-in" />
-                  </a>
-                  {/* WhatsApp – using WhatsApp icon */}
-                  <a
-                    href="https://wa.me/254769527791"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg"
-                    aria-label="WhatsApp"
-                  >
-                    <i className="fa-brands fa-whatsapp" />
-                  </a>
-                  {/* TikTok */}
-                  <a
-                    href="https://tiktok.com/@linetkithae22"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg"
-                    aria-label="TikTok"
-                  >
-                    <i className="fa-brands fa-tiktok" />
-                  </a>
+                  <a href="https://instagram.com/kithae.linet" target="_blank" rel="noopener noreferrer" className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg" aria-label="Instagram"><i className="fa-brands fa-instagram" /></a>
+                  <a href="https://www.linkedin.com/in/linet-kithae-936211344" target="_blank" rel="noopener noreferrer" className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" /></a>
+                  <a href="https://wa.me/254769527791" target="_blank" rel="noopener noreferrer" className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg" aria-label="WhatsApp"><i className="fa-brands fa-whatsapp" /></a>
+                  <a href="https://tiktok.com/@linetkithae22" target="_blank" rel="noopener noreferrer" className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg" aria-label="TikTok"><i className="fa-brands fa-tiktok" /></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile meta – same updates */}
+        {/* Mobile meta – unchanged */}
         <div className="md:hidden mt-8 pt-6 border-t border-nude-200/50 relative z-30 bg-nude-50/80 backdrop-blur-sm rounded-t-2xl px-4 pb-4">
           <div className="grid grid-cols-2 gap-y-4 gap-x-6">
             <div>
@@ -196,42 +160,10 @@ export default function Hero() {
           <div className="mt-4 pt-4 border-t border-nude-200/40">
             <div className="text-[0.65rem] tracking-[0.3em] uppercase text-nude-700 font-medium mb-2 font-tech">Connect</div>
             <div className="flex gap-5">
-              <a
-                href="https://instagram.com/kithae.linet"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg"
-                aria-label="Instagram"
-              >
-                <i className="fa-brands fa-instagram" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/linet-kithae-936211344"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg"
-                aria-label="LinkedIn"
-              >
-                <i className="fa-brands fa-linkedin-in" />
-              </a>
-              <a
-                href="https://wa.me/254769527791"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg"
-                aria-label="WhatsApp"
-              >
-                <i className="fa-brands fa-whatsapp" />
-              </a>
-              <a
-                href="https://tiktok.com/@linetkithae22"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg"
-                aria-label="TikTok"
-              >
-                <i className="fa-brands fa-tiktok" />
-              </a>
+              <a href="https://instagram.com/kithae.linet" target="_blank" rel="noopener noreferrer" className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg" aria-label="Instagram"><i className="fa-brands fa-instagram" /></a>
+              <a href="https://www.linkedin.com/in/linet-kithae-936211344" target="_blank" rel="noopener noreferrer" className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" /></a>
+              <a href="https://wa.me/254769527791" target="_blank" rel="noopener noreferrer" className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg" aria-label="WhatsApp"><i className="fa-brands fa-whatsapp" /></a>
+              <a href="https://tiktok.com/@linetkithae22" target="_blank" rel="noopener noreferrer" className="text-nude-500 hover:text-gold-500 transition-colors duration-300 text-lg" aria-label="TikTok"><i className="fa-brands fa-tiktok" /></a>
             </div>
           </div>
         </div>
