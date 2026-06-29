@@ -9,7 +9,7 @@ export default function Contact() {
   const [message, setMessage] = useState('')
 
   // 🔁 REPLACE with your actual Formspree endpoint
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-endpoint-here'
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzdlvvby'
 
   const handleSubmit = async (e) => {
     e.preventDefault()
