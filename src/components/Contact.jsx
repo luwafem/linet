@@ -5,12 +5,48 @@ import useReveal from '../hooks/useReveal'
 export default function Contact() {
   const leftRef = useReveal()
   const rightRef = useReveal()
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
+  const [message, setMessage] = useState('')
 
-  const handleSubmit = (e) => {
+  // 🔁 REPLACE with your actual Formspree endpoint
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-endpoint-here'
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 3000)
+    const form = e.target
+    const formData = new FormData(form)
+
+    setStatus('sending')
+    setMessage('')
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setMessage('Message sent! I\'ll get back to you soon.')
+        form.reset() // clears the form
+        setTimeout(() => {
+          setStatus('idle')
+          setMessage('')
+        }, 5000)
+      } else {
+        throw new Error('Server error')
+      }
+    } catch (error) {
+      setStatus('error')
+      setMessage('Oops! Something went wrong. Please try again.')
+      setTimeout(() => {
+        setStatus('idle')
+        setMessage('')
+      }, 5000)
+    }
   }
 
   return (
@@ -30,21 +66,21 @@ export default function Contact() {
             {/* Contact details – with clickable links */}
             <div className="space-y-6 mb-10">
               {[
-                { 
-                  icon: 'fa-regular fa-envelope', 
-                  label: 'Email', 
+                {
+                  icon: 'fa-regular fa-envelope',
+                  label: 'Email',
                   value: 'linetkithae@gmail.com',
                   href: 'mailto:linetkithae@gmail.com'
                 },
-                { 
-                  icon: 'fa-brands fa-whatsapp', 
-                  label: 'WhatsApp', 
+                {
+                  icon: 'fa-brands fa-whatsapp',
+                  label: 'WhatsApp',
                   value: '+254 769 527 791',
                   href: 'https://wa.me/254769527791'
                 },
-                { 
-                  icon: 'fa-regular fa-location-dot', 
-                  label: 'Location', 
+                {
+                  icon: 'fa-regular fa-location-dot',
+                  label: 'Location',
                   value: 'Nairobi, Kenya',
                   href: 'https://maps.google.com/?q=Nairobi,Kenya'
                 },
@@ -101,31 +137,67 @@ export default function Contact() {
                 <label className="text-xs tracking-[.12em] uppercase text-nude-500 mb-2 block font-tech font-medium">
                   Your Name
                 </label>
-                <input type="text" className="contact-input" placeholder="Name" required />
+                <input
+                  type="text"
+                  name="name"
+                  className="contact-input"
+                  placeholder="Name"
+                  required
+                />
               </div>
               <div>
                 <label className="text-xs tracking-[.12em] uppercase text-nude-500 mb-2 block font-tech font-medium">
                   Email Address
                 </label>
-                <input type="email" className="contact-input" placeholder="Email" required />
+                <input
+                  type="email"
+                  name="email"
+                  className="contact-input"
+                  placeholder="Email"
+                  required
+                />
               </div>
               <div>
                 <label className="text-xs tracking-[.12em] uppercase text-nude-500 mb-2 block font-tech font-medium">
                   Brand / Company
                 </label>
-                <input type="text" className="contact-input" placeholder="Your Brand" />
+                <input
+                  type="text"
+                  name="company"
+                  className="contact-input"
+                  placeholder="Your Brand"
+                />
               </div>
               <div>
                 <label className="text-xs tracking-[.12em] uppercase text-nude-500 mb-2 block font-tech font-medium">
                   Tell Me About Your Project
                 </label>
-                <textarea className="contact-input min-h-[140px] resize-none" placeholder="Share your goals..." required />
+                <textarea
+                  name="message"
+                  className="contact-input min-h-[140px] resize-none"
+                  placeholder="Share your goals..."
+                  required
+                />
               </div>
-              <button type="submit" className="btn-gold w-full justify-center font-tech">
-                {sent ? (
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="btn-gold w-full justify-center font-tech disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {status === 'sending' ? (
+                  <>
+                    <i className="fa-solid fa-spinner fa-spin" />
+                    Sending...
+                  </>
+                ) : status === 'success' ? (
                   <>
                     <i className="fa-solid fa-check" />
                     Message Sent!
+                  </>
+                ) : status === 'error' ? (
+                  <>
+                    <i className="fa-solid fa-exclamation-triangle" />
+                    Error
                   </>
                 ) : (
                   <>
@@ -134,6 +206,11 @@ export default function Contact() {
                   </>
                 )}
               </button>
+              {message && (
+                <p className={`text-sm text-center font-tech mt-2 ${status === 'success' ? 'text-green-600' : 'text-red-500'}`}>
+                  {message}
+                </p>
+              )}
             </form>
           </div>
         </div>
