@@ -1,3 +1,4 @@
+// src/components/Marquee.jsx
 import { useRef } from 'react';
 
 const socialIcons = [
@@ -13,9 +14,9 @@ const socialIcons = [
 
 const brandColors = {
   instagram: 'hover:text-[#E4405F]',
-  tiktok: 'hover:text-[#000000]',
+  tiktok: 'hover:text-[#2D2D2D]',
   linkedin: 'hover:text-[#0A66C2]',
-  x: 'hover:text-[#000000]',
+  x: 'hover:text-[#2D2D2D]',
   facebook: 'hover:text-[#1877F2]',
   pinterest: 'hover:text-[#E60023]',
   youtube: 'hover:text-[#FF0000]',
@@ -26,10 +27,10 @@ export default function Marquee() {
   const trackRef = useRef(null);
 
   return (
-    <section className="py-10 border-y border-nude-200/60 bg-nude-100/40 overflow-hidden">
+    <section className="py-5 sm:py-12 border-y border-nude-200/40 bg-nude-100/30 overflow-hidden">
       <div
         ref={trackRef}
-        className="marquee-track flex items-center gap-32 will-change-transform"
+        className="marquee-track flex items-center gap-10 sm:gap-24 md:gap-32 will-change-transform"
         style={{ transform: 'translateX(0)' }}
       >
         {[...socialIcons, ...socialIcons].map((item, i) => {
@@ -46,9 +47,9 @@ export default function Marquee() {
                 className={`text-nude-400 transition-all duration-300 hover:scale-110 ${colorClass}`}
                 aria-label={item.label}
               >
-                <i className={`${item.icon} text-3xl sm:text-4xl`} />
+                <i className={`${item.icon} text-2xl sm:text-3xl md:text-4xl`} />
               </a>
-              <span className="text-[0.55rem] uppercase tracking-widest text-nude-400">
+              <span className="text-[0.5rem] sm:text-[0.55rem] uppercase tracking-widest text-nude-400">
                 {item.label}
               </span>
             </div>
